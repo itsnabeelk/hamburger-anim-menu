@@ -140,10 +140,12 @@ h6 {
     position: fixed;
     width: 100%;
     opacity: 0;
+    display: none;
 }
 
 .nav-active .nav__content {
     opacity: 1;
+    display: flex;
 }
 
 .nav__list-item {
@@ -321,29 +323,32 @@ h6 {
 .menu-right {
     transition: 0.5s all;
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
     height: 100vh;
     opacity: 0;
     transition: 0.5s all;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 55px;
 }
 
 .menu-left {
     width: 100%;
-    background: #f7f7f7;
+    background: #f9f9f9;
     height: 100vh;
     opacity: 0;
 }
-
 .nav-active .menu-left,
 .nav-active .menu-right {
     opacity: 1;
     transition: 0.5s all;
 }
-
-.menu-item>a {
+.menu-item > a {
+    height: 45px !important;
+}
+.menu-item > a {
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden;
@@ -357,8 +362,14 @@ h6 {
 }
 
 .menu-list {
-    width: 60%;
+    width: 80%;
     position: relative;
+}
+
+@media (max-width:1280px) {
+    .menu-list {
+        width: 100%;
+    }
 }
 
 .plus-drop {
@@ -403,6 +414,8 @@ h6 {
 .plus-drop img {
     transition: transform 0.3s ease;
     width: 50%;
+    top: -8px;
+    position: relative;
 }
 
 .rotate img {
@@ -468,7 +481,8 @@ h6 {
     }
 
     .plus-drop img {
-        width: 70%;
+        width: 50%;
+        top: 0;
     }
 
     .plus-drop {
@@ -486,6 +500,9 @@ h6 {
 
     .menu-container {
         gap: 35px;
+    }
+    .menu-item > a {
+        height: 60px !important;
     }
 }
 
@@ -550,7 +567,15 @@ h6 {
     }
 
     .plus-drop img {
+        width: 50%;
+        top: 0px;
+    }
+    .menu-item > a {
+        height: 60px !important;
+    }
+    .menu-list {
         width: 70%;
+        position: relative;
     }
 
     .plus-drop {
@@ -709,8 +734,14 @@ h6 {
 
 .menu-left {
     display: flex;
+    padding: 35px 80px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
+}
+.menu-left iframe{
+ /* filter: grayscale(1); */
+ margin-top: 25px;
 }
 
 .menu-left h1 {
@@ -743,6 +774,9 @@ h6 {
 .right-social-wrapper img {
     width: 100%;
     max-width: 20px;
+}
+.nav-active .navbar-brand {
+    opacity: 0 !important;
 }
 
 /* profile-drop */
